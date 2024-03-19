@@ -1,0 +1,44 @@
+train_pkl: /path/to/EXP_training_seq.pkl
+test_pkl: /path/to/EXP_val_seq.pkl
+final_test_pkl: "/path/to/EXP_val_image.pkl"
+
+train_img_path: /path/to/train_image_path
+test_img_path: /path/to/test_image_path
+n_segment: 100
+train_audio_path: /path/to/EXP_training_audio_fea.pkl
+test_audio_path: /path/to/EXP_val_audio_fea.pkl
+audio_fea_dim: 896
+
+use_audio_fea: False
+
+task: "EXP"
+dataset_type: "EXP_training_BLB"
+stage1_checkpoint: /path/to/stage1_checkpoint
+
+
+hidden_size: [256,128,64]  
+
+lr: 0.00005
+momentum: 0.9
+weight_decay: 0.00001
+batch_size: 32
+optim: "AdamW"
+
+num_epochs: 50
+num_works: 36
+ema_interval: 1
+ema_ratio: 0.001
+use_ema: False
+resume: null 
+
+start_epoch: 0
+print_freq: 20
+save_epoch: 1
+accum_iter: 100
+use_dp: True
+device: [0,1]
+
+log_dir: "./logs"
+checkpoint_dir: "./checkpoints/"
+weights: [1.0, 10.399988319803773, 16.23179290857716, 19.607905747632678, 1.8556467915720152, 2.225347712532647, 5.610554505356018, 1.0590043828089226]
+
